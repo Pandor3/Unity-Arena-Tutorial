@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Arena Tutorial.sln"
+    "dotnet.defaultSolution": "Unity-Arena-Tutorial.sln"
 }

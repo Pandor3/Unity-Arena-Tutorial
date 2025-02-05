@@ -15,6 +15,11 @@ public class PlayerController : MonoBehaviour
     // Ceci fera en sorte que la caméra suive l'orientation
     public Transform cameraTransform;
 
+    public GameObject projectilePrefab;
+    public Transform firePoint;
+
+
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -22,16 +27,7 @@ public class PlayerController : MonoBehaviour
 
     void Shoot()
     {
-        RaycastHit[] hits = Physics.RaycastAll(playerCamera.transform.position, playerCamera.transform.forward, shootRange);
-
-        foreach (RaycastHit hit in hits)
-        {
-            Target target = hit.transform.GetComponent<Target>();
-            if (target != null)
-            {
-                target.DestroyTarget();
-            }
-        }
+        Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
     }
 
     void Update()
