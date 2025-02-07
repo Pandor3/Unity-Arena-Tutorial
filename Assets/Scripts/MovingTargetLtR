@@ -1,0 +1,30 @@
+// RtL veux dire Left to Right, ce qui sera le mouvement que fera la cible avec ce script
+using UnityEngine;
+
+public class MovingTarget : Monobehaviour
+{
+    public float speed = 3f;
+    public float distance = 5f;
+
+    private Vector3 StartPosition;
+    
+    // 1 = Droite, -1 = Gauche
+    private int direction = 1;
+
+    void Start()
+    {
+        StartPosition = transform.position;
+    }
+
+    void Update()
+    {
+        // Ceci fera bouger la cible de gauche à droite 
+        transform.position += Vector3.right * direction * speed * Time.deltaTime;
+        
+        // Ceci inversera la direction dès lors que la cible atteint la distance maximale
+        if (Mathf.Abs(transform.position.x - StartPosition.x) >= distance)
+        {
+            direction *= -1;
+        }
+    }
+}
