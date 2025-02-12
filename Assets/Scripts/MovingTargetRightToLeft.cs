@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MovingTarget : MonoBehaviour
+public class MovingTargetRtL : MonoBehaviour
 {
     public float speed = 2f;
     public float moveDistance = 5f;
