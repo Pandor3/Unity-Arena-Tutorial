@@ -3,14 +3,14 @@ using UnityEngine;
 public class FirstPersonCamera : MonoBehaviour
 {
     // Initialisation de la sensibilité de la souris et attachement au modèle du joueur
-    public float mouseSensitivity = 100f;
+    public float mouseSensitivity = 400f;
     public Transform playerBody;
 
     private float xRotation = 0f;
 
     void Start()
     {
-        // Ceci va cacher le curseur et le bloquer au centre de l'écran
+        // Ceci va cacher le curseur et le bloquer au centre de l'écran dès lors que le joueur clique sur l'écran
         Cursor.lockState = CursorLockMode.Locked;
     }
 
